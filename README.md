@@ -21,9 +21,8 @@ about how cleaning the data.
 the script to do that is run_analysis.R with the next actions
 
 
-## root directory for project with all datasets
 
-## load file with activity and features.
+load files with activity and features.
 
 
 ###########################################################################################
@@ -31,52 +30,45 @@ the script to do that is run_analysis.R with the next actions
 ###########################################################################################
 ###########################################################################################
 ##
-## load the files from test directory. the name of the column will be f + column number
-## initially and then it'll be changed by a friendly name.
-##
-###########################################################################################
+load the files from test directory. the name of the column will be f + column number
+initially and then it'll be changed by a friendly name.
 
-## count the number of variable to use later and rename the column with f + number
 
-###########################################################################################
-##
-## load the files from train directory. the name of the column will be f + column number
-## initially and then it'll be changed by a friendly name.
-##
-###########################################################################################
+load the files from train directory. the name of the column will be f + column number
+initially and then it'll be changed by a friendly name.
 
-## count the number of variable to use later and rename the column with f + number
+
+sum the total number of variables and i'll use later to scan the file
 
 
 ###########################################################################################
 ###################################### CLEANING PHASE ######################################
 ###########################################################################################
 ###########################################################################################
-##
-## load the files from test directory. the name of the column will be f + column number.
-## and cleaning the data frame with mean and std.
-##
-###########################################################################################
 
-## merging all data sets and obtaning only a dataset with the mean and standard 
-## deviations values. we'll need to use rbind to add values and merge to add new columns.
-
-## add the values of rbind for all data frames.
+load the files from test directory. the name of the column will be f + column number.
+and cleaning the data frame with mean and std.
 
 
-## add new two columns to the x_all data frame.
+merging all data sets and obtaning only a dataset with the mean and standard 
+deviations values. we'll need to use rbind to add values and merge to add new columns.
+
+add the values of rbind for all data frames.
 
 
-## changing the column name to a friendly column name based on features data frame value
+add new two columns to the x_all data frame.
 
 
-## changing the numeric value of activity to a friendly label from activity dataframe
+changing the column name to a friendly column name based on features data frame value
+
+
+changing the numeric value of activity to a friendly label from activity dataframe
 
 
 
-## extract only the mean and standard deviation column from x_all dataset.
+extract only the mean and standard deviation column from x_all dataset.
 
 
-## aggregate by activity and subject and changing both column names
+aggregate by activity and subject and changing both column names
 
-## create the output file with write.table function
+create the output file with write.table function
