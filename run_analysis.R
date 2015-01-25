@@ -39,7 +39,8 @@ activity$activity <- as.character(activity$activity);
 ###########################################################################################
 ###########################################################################################
 ##
-## load the files from test directory. the name of the column will be f + column number.
+## load the files from test directory. the name of the column will be f + column number
+## initially and then it'll be changed by a friendly name.
 ##
 ###########################################################################################
 
@@ -59,7 +60,8 @@ subject_test <- read.table("./file/test/subject_test.txt",
 
 ###########################################################################################
 ##
-## load the files from train directory. the name of the column will be f + column number.
+## load the files from train directory. the name of the column will be f + column number
+## initially and then it'll be changed by a friendly name.
 ##
 ###########################################################################################
 
@@ -101,8 +103,6 @@ subject_all <- rbind(subject_test,subject_train);
 x_all["activity"]<-NA;
 x_all["subject"]<-NA;
 
-######### rellenar bien
-
 total_xall <- dim(x_all);
 
 for (i in 1:total_xall[1])
@@ -142,18 +142,13 @@ for (i in 1:total_xall[1])
 x_allpartial<-x_all[,grepl("mean|std|activity|subject",colnames(x_all))];
 x_allsm <- select(x_allpartial, -contains("Freq"));
 
-## aggregate by activity and subject
+## aggregate by activity and subject and changing both column names
 
 x_final <- aggregate(x_allsm[,1:66], by=list(x_allsm$subject, x_allsm$activity), mean)
+
+colnames(x_final)[1] <- "subject";
+colnames(x_final)[2] <- "activity";
 
 ## create the output file with write.table function
 
 write.table(x_final,"/Users/felixangelfernandezalonso/datasciencecoursera/GettingNClean/Project/x_final.txt", row.name=FALSE);
-
-
-
-
-
-
-
-
